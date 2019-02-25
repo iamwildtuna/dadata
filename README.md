@@ -1,4 +1,4 @@
-Dadata API client (Fork [gietos/dadata](https://github.com/gietos/dadata))
+SDK для работы с API DaData.ru (Fork [gietos/dadata](https://github.com/gietos/dadata))
 =================
 
 [API документация](https://dadata.ru/api/clean/)
