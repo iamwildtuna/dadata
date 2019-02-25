@@ -223,6 +223,31 @@ class Client
         return $result;
     }
 
+    public function cleanStructure($data)
+    {
+        $response = $this->queryStruct($this->prepareUri('clean'), $data);
+        return $response;
+    }
+
+    protected function queryStruct($uri, array $params = [], $method = self::METHOD_POST)
+    {
+        $request = new Request($method, $uri, [
+            'Content-Type'  => 'application/json',
+            'Authorization' => 'Token ' . $this->token,
+            'X-Secret'      => $this->secret,
+        ], 0 < count($params) ? json_encode($params) : null);
+
+        $response = $this->httpClient->send($request);
+
+        $result = json_decode($response->getBody(), true);
+
+        if (null === $result || empty($result['data'])) {
+            throw new \RuntimeException('Empty result');
+        }
+
+        return $result['data'];
+    }
+
     /**
      * Gets balance.
      *

@@ -1,13 +1,17 @@
 {
-  "name": "gietos/dadata",
-  "description": "Dadata API client (https://dadata.ru)",
+  "name": "iamwildtuna/dadata",
+  "description": "SDK для работы с API DaData.ru",
   "minimum-stability": "stable",
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/gietos/dadata/issues",
-    "source": "https://github.com/gietos/dadata"
+    "issues": "https://github.com/iamwildtuna/dadata/issues",
+    "source": "https://github.com/iamwildtuna/dadata"
   },
   "authors": [
+    {
+      "name": "Nikolay Lapay",
+      "email": "nl@wildtuna.pro"
+    },
     {
       "name": "Sergey Kasatkin",
       "email": "spam@onsky.ru"
