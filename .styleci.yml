@@ -3,7 +3,7 @@ preset: psr2
 risky: false
 
 enabled:
-  - alpha_ordered_imports 
+  - alpha_ordered_imports
   - binary_operator_spaces
   - blank_line_after_opening_tag
   - cast_spaces
@@ -38,6 +38,3 @@ enabled:
   - unalign_double_arrow
   - unalign_equals
   - whitespace_after_comma_in_array
-
-disabled:
-  - single_import_per_statement
