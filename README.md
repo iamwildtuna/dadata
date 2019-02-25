@@ -1,6 +1,6 @@
-[![Latest Stable Version](https://poser.pugx.org/iamwildtuna/dadata/v/stable)](https://packagist.org/packages/lapaygroup/russianpost)
-[![Total Downloads](https://poser.pugx.org/iamwildtuna/dadata/downloads)](https://packagist.org/packages/iamwildtuna/downloads)
-[![License](https://poser.pugx.org/iamwildtuna/downloads/license)](https://packagist.org/packages/lapaygroup/russianpost)
+[![Latest Stable Version](https://poser.pugx.org/iamwildtuna/dadata/v/stable)](https://packagist.org/packages/iamwildtuna/dadata)
+[![Total Downloads](https://poser.pugx.org/iamwildtuna/dadata/downloads)](https://packagist.org/packages/iamwildtuna/dadata/downloads)
+[![License](https://poser.pugx.org/iamwildtuna/dadata/downloads/license)](https://packagist.org/packages/iamwildtuna/dadata)
 
 SDK для работы с API DaData.ru (Fork [gietos/dadata](https://github.com/gietos/dadata))
 =================
