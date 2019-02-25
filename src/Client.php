@@ -84,21 +84,45 @@ class Client
     }
 
     /**
+     * Проверяет входной параметр и преобразует в массив
+     *
+     * @param string|array $param
+     * @return array
+     */
+    private function checkInParam($param)
+    {
+        if (!is_array($param)) $param = [$param];
+
+        if (count($param) > 50)
+            throw new \InvalidArgumentException('В одном запросе не может быть больше 50 элементов');
+
+        return $param;
+    }
+
+    /**
      * Cleans address.
      *
-     * @param string $address
+     * @param string|array $addressList
      *
-     * @return Address
+     * @return Address|array
      * @throws \ReflectionException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanAddress($address)
+    public function cleanAddress($addressList)
     {
-        $response = $this->query($this->prepareUri('clean/address'), [$address]);
-        /** @var Address $result */
-        $result = $this->populate(new Address, $response);
+        $result = [];
+        $addressList = $this->checkInParam($addressList);
+        $response = $this->query($this->prepareUri('clean/address'), $addressList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Address(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Address(), $response);
+        }
 
         return $result;
     }
@@ -106,19 +130,27 @@ class Client
     /**
      * Cleans phone.
      *
-     * @param string $phone
+     * @param array|string $phone
      *
-     * @return Phone
+     * @return Phone|array
      * @throws \ReflectionException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanPhone($phone)
+    public function cleanPhone($phoneList)
     {
-        $response = $this->query($this->prepareUri('clean/phone'), [$phone]);
-        /** @var Phone $result */
-        $result = $this->populate(new Phone(), $response);
+        $result = [];
+        $phoneList = $this->checkInParam($phoneList);
+        $response = $this->query($this->prepareUri('clean/phone'), $phoneList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Phone(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Phone(), $response);
+        }
 
         return $result;
     }
@@ -126,19 +158,27 @@ class Client
     /**
      * Cleans passport.
      *
-     * @param string $passport
+     * @param string|array $passport
      *
-     * @return Passport
+     * @return Passport|array
      * @throws \ReflectionException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanPassport($passport)
+    public function cleanPassport($passportList)
     {
-        $response = $this->query($this->prepareUri('clean/passport'), [$passport]);
-        /** @var Passport $result */
-        $result = $this->populate(new Passport(), $response);
+        $result = [];
+        $passportList = $this->checkInParam($passportList);
+        $response = $this->query($this->prepareUri('clean/passport'), $passportList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Passport(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Passport(), $response);
+        }
 
         return $result;
     }
@@ -146,19 +186,27 @@ class Client
     /**
      * Cleans name.
      *
-     * @param string $name
+     * @param string|array $name
      *
-     * @return Name
+     * @return Name|array
      * @throws \ReflectionException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanName($name)
+    public function cleanName($nameList)
     {
-        $response = $this->query($this->prepareUri('clean/name'), [$name]);
-        /** @var Name $result */
-        $result = $this->populate(new Name(), $response);
+        $result = [];
+        $nameList = $this->checkInParam($nameList);
+        $response = $this->query($this->prepareUri('clean/name'), $nameList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Name(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Name(), $response);
+        }
 
         return $result;
     }
@@ -166,7 +214,7 @@ class Client
     /**
      * Cleans email.
      *
-     * @param string $email
+     * @param string|array $email
      *
      * @return Email
      * @throws \ReflectionException
@@ -174,11 +222,19 @@ class Client
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanEmail($email)
+    public function cleanEmail($emailList)
     {
-        $response = $this->query($this->prepareUri('clean/email'), [$email]);
-        /** @var Email $result */
-        $result = $this->populate(new Email(), $response);
+        $result = [];
+        $emailList = $this->checkInParam($emailList);
+        $response = $this->query($this->prepareUri('clean/email'), $emailList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Email(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Email(), $response);
+        }
 
         return $result;
     }
@@ -186,19 +242,27 @@ class Client
     /**
      * Cleans date.
      *
-     * @param string $date
+     * @param string|array $date
      *
-     * @return Date
+     * @return Date|array
      * @throws \ReflectionException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanDate($date)
+    public function cleanDate($dateList)
     {
-        $response = $this->query($this->prepareUri('clean/birthdate'), [$date]);
-        /** @var Date $result */
-        $result = $this->populate(new Date(), $response);
+        $result = [];
+        $dateList = $this->checkInParam($dateList);
+        $response = $this->query($this->prepareUri('clean/birthdate'), $dateList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Date(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Date(), $response);
+        }
 
         return $result;
     }
@@ -206,7 +270,7 @@ class Client
     /**
      * Cleans vehicle.
      *
-     * @param string $vehicle
+     * @param string|array $vehicle
      *
      * @return Vehicle
      * @throws \ReflectionException
@@ -214,11 +278,19 @@ class Client
      * @throws \InvalidArgumentException
      * @throws GuzzleException
      */
-    public function cleanVehicle($vehicle)
+    public function cleanVehicle($vehicleList)
     {
-        $response = $this->query($this->prepareUri('clean/vehicle'), [$vehicle]);
-        /** @var Vehicle $result */
-        $result = $this->populate(new Vehicle(), $response);
+        $result = [];
+        $vehicleList = $this->checkInParam($vehicleList);
+        $response = $this->query($this->prepareUri('clean/vehicle'), $vehicleList);
+
+        if (is_array($response)) {
+            foreach ($response as $respInfo) {
+                $result[] = $this->populate(new Vehicle(), $respInfo);
+            }
+        } else {
+            $result = $this->populate(new Vehicle(), $response);
+        }
 
         return $result;
     }
@@ -295,7 +367,10 @@ class Client
             throw new \RuntimeException('Empty result');
         }
 
-        return array_shift($result);
+        if (count($result) > 1)
+            return $result;
+        else
+            return array_shift($result);
     }
 
     /**
