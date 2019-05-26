@@ -5,7 +5,8 @@
 # !!! Принято решения развивать SDK в отдельном [проекте](https://github.com/iamwildtuna/dadata-sdk) он будет реализовывать все функции API DaData.ru !!!  
 
 SDK для работы с API DaData.ru (Fork [gietos/dadata](https://github.com/gietos/dadata))
-=================
+=================  
+Посмотреть все проекты или поддержать автора можно [тут](https://lapay.group/opensource).  
 
 [API документация](https://dadata.ru/api/clean/)
 
