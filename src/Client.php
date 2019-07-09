@@ -558,6 +558,27 @@ class Client
         return null;
     }
 
+
+    /**
+     * Очищает адрес используя API подсказок DaData
+     *
+     * @param $address
+     * @return Address
+     * @throws GuzzleException
+     * @throws \ReflectionException
+     */
+    public function cleanAddressSuggestion($address)
+    {
+        $response = $this->query($this->baseSuggestionsUrl . 'suggest/address', ['query' => $address, 'count' => 1]);
+
+        if (is_array($response) && 0 < count($response)) {
+            /** @var Address $address */
+            $address = $this->populate(new Address, array_shift($response)['data']);
+
+            return $address;
+        }
+    }
+
     /**
      * Ищет организации и индивидуальных предпринимателей:
      * по ИНН / ОГРН;

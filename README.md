@@ -38,6 +38,7 @@ $client = new Dadata\Client(new \GuzzleHttp\Client(), [
 Пример очистки данных строками
 ``` php
 $response = $client->cleanAddress('мск сухонска 11/-89');
+$response = $client->cleanAddressSuggestion('мск сухонска 11/-89'); // Очистка адреса через API подсказок
 $response = $client->cleanPhone('тел 7165219 доб139');
 $response = $client->cleanPassport('4509 235857');
 $response = $client->cleanName('Срегей владимерович иванов');
