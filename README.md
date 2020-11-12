@@ -13,7 +13,8 @@ SDK для работы с API DaData.ru (Fork [gietos/dadata](https://github.co
 <a name="links"><h1>Changelog</h1></a>
 
 - 1.2 - Добавлена поддержа [составной записи](https://dadata.ru/api/clean/#request-record);  
-- 1.3 - Добавлена пакетная очистка данных.
+- 1.3 - Добавлена пакетная очистка данных;    
+- 1.4 - Добавлена поддержка Guzzle 7.    
 
 # Установка  
 Для установки можно использовать менеджер пакетов Composer
