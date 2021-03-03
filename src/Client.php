@@ -143,10 +143,12 @@ class Client
     public function cleanPhone($phoneList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($phoneList)) $arr = true;
         $phoneList = $this->checkInParam($phoneList);
         $response = $this->query($this->prepareUri('clean/phone'), $phoneList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Phone(), $respInfo);
             }
@@ -171,10 +173,12 @@ class Client
     public function cleanPassport($passportList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($passportList)) $arr = true;
         $passportList = $this->checkInParam($passportList);
         $response = $this->query($this->prepareUri('clean/passport'), $passportList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Passport(), $respInfo);
             }
@@ -199,10 +203,12 @@ class Client
     public function cleanName($nameList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($nameList)) $arr = true;
         $nameList = $this->checkInParam($nameList);
         $response = $this->query($this->prepareUri('clean/name'), $nameList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Name(), $respInfo);
             }
@@ -227,10 +233,12 @@ class Client
     public function cleanEmail($emailList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($emailList)) $arr = true;
         $emailList = $this->checkInParam($emailList);
         $response = $this->query($this->prepareUri('clean/email'), $emailList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Email(), $respInfo);
             }
@@ -255,10 +263,12 @@ class Client
     public function cleanDate($dateList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($dateList)) $arr = true;
         $dateList = $this->checkInParam($dateList);
         $response = $this->query($this->prepareUri('clean/birthdate'), $dateList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Date(), $respInfo);
             }
@@ -283,10 +293,12 @@ class Client
     public function cleanVehicle($vehicleList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($vehicleList)) $arr = true;
         $vehicleList = $this->checkInParam($vehicleList);
         $response = $this->query($this->prepareUri('clean/vehicle'), $vehicleList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Vehicle(), $respInfo);
             }
