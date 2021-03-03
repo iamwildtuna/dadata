@@ -113,10 +113,12 @@ class Client
     public function cleanAddress($addressList)
     {
         $result = [];
+        $arr = false;
+        if (is_array($addressList)) $arr = true;
         $addressList = $this->checkInParam($addressList);
         $response = $this->query($this->prepareUri('clean/address'), $addressList);
 
-        if (is_array($response)) {
+        if ($arr) {
             foreach ($response as $respInfo) {
                 $result[] = $this->populate(new Address(), $respInfo);
             }
