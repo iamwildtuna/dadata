@@ -2,7 +2,8 @@
 [![Total Downloads](https://poser.pugx.org/iamwildtuna/dadata/downloads)](https://packagist.org/packages/iamwildtuna/dadata)
 [![License](https://poser.pugx.org/iamwildtuna/dadata/license)](https://packagist.org/packages/iamwildtuna/dadata)
 
-# !!! Принято решения развивать SDK в отдельном [проекте](https://github.com/iamwildtuna/dadata-sdk) он будет реализовывать все функции API DaData.ru !!!  
+# Появился [официальный SDK](https://github.com/hflabs/dadata-php).   
+# Есть бандл для [Symfony](https://github.com/Velhron/dadata-bundle).    
 
 SDK для работы с API DaData.ru (Fork [gietos/dadata](https://github.com/gietos/dadata))
 =================  
